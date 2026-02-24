@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>首页 - 筱鑫青也</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography,aspect-ratio"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      body { font-family: 'Space Grotesk', sans-serif; background-color: #f0f0f0; }
+      .neo-border { border: 2px solid black; }
+      .neo-shadow { box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); }
+      .neo-shadow-lg { box-shadow: 8px 8px 0px 0px rgba(0,0,0,1); }
+      .neo-hover:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px 0px rgba(0,0,0,1); }
+      .neo-hover-lg:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); }
+      .prose h1, .prose h2, .prose h3 { font-weight: 900 !important; color: black !important; }
+      .prose blockquote { border-left-width: 4px !important; border-left-color: black !important; font-style: normal !important; font-weight: 700 !important; }
+      .prose code { background-color: #fef08a !important; padding: 2px 4px !important; border: 1px solid black !important; border-radius: 4px !important; }
+      .prose pre { border: 2px solid black !important; box-shadow: 4px 4px 0px 0px rgba(0,0,0,1) !important; background-color: #1a1a1a !important; }
+      .nav-current { font-weight: 800; text-decoration: underline; }
+      #wechat-modal { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; padding: 1rem; }
+      #wechat-modal.show { display: flex; }
+      #wechat-modal .modal-box { background: #fff; padding: 1.5rem; max-width: 320px; text-align: center; border: 2px solid black; box-shadow: 8px 8px 0 0 #000; }
+      #wechat-modal .modal-box img { width: 100%; height: auto; display: block; }
+      #wechat-modal .modal-box p { margin-top: 1rem; font-size: 0.9rem; font-weight: 600; }
+      #wechat-modal .modal-close { margin-top: 1rem; padding: 0.5rem 1rem; background: #f0f0f0; border: 2px solid black; font-weight: 700; cursor: pointer; }
+    </style>
+  </head>
+  <body class="min-h-screen text-black antialiased">
+    <nav class="sticky top-0 z-50 bg-[#f0f0f0] neo-border-b border-b-black">
+      <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-bold font-black">筱鑫<span class="underline decoration-4">青也</span></a>
+        <ul class="flex gap-6 font-semibold">
+          <li><a href="index.html" class="nav-current hover:underline">首页</a></li>
+          <li><a href="about.html" class="hover:underline">关于我</a></li>
+          <li><a href="friends.html" class="hover:underline">交友</a></li>
+          <li><a href="products.html" class="hover:underline">产品</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 py-16">
+      <section class="mb-24">
+        <p class="text-sm font-bold uppercase tracking-widest mb-4">Welcome</p>
+        <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+          你好，我是<br />
+          <span class="bg-[#fef08a] neo-border px-2 inline-block neo-shadow">筱鑫青也</span>
+        </h1>
+        <p class="text-lg md:text-xl max-w-xl mb-8 font-medium">
+          一句话介绍自己——外卖运营师/短视频，自媒体创作爱好者 —— 无限进步。
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button type="button" id="btn-contact" class="inline-block bg-black text-white font-bold px-6 py-3 neo-border neo-shadow-lg neo-hover-lg transition-all cursor-pointer">联系我</button>
+          <a href="products.html" class="inline-block bg-white font-bold px-6 py-3 neo-border neo-shadow neo-hover transition-all">看产品</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- 微信二维码弹窗 -->
+    <div id="wechat-modal" aria-hidden="true">
+      <div class="modal-box">
+        <img src="wechat-qr.png" alt="微信二维码，扫一扫加我为朋友" />
+        <p>扫一扫上面的二维码图案，加我为朋友。</p>
+        <button type="button" class="modal-close" id="wechat-modal-close">关闭</button>
+      </div>
+    </div>
+
+    <footer class="border-t-2 border-black bg-white py-6 mt-auto">
+      <p class="text-center font-semibold text-sm">© 1996-2026 筱鑫青也</p>
+    </footer>
+    <script>
+      (function () {
+        var btn = document.getElementById('btn-contact');
+        var modal = document.getElementById('wechat-modal');
+        var closeBtn = document.getElementById('wechat-modal-close');
+        if (btn && modal) {
+          btn.addEventListener('click', function () { modal.classList.add('show'); modal.setAttribute('aria-hidden', 'false'); });
+          function closeModal() { modal.classList.remove('show'); modal.setAttribute('aria-hidden', 'true'); }
+          if (closeBtn) closeBtn.addEventListener('click', closeModal);
+          modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+        }
+      })();
+    </script>
+  </body>
+</html>

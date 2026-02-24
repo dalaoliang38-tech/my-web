@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>产品 - 筱鑫青也</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography,aspect-ratio"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      body { font-family: 'Space Grotesk', sans-serif; background-color: #f0f0f0; }
+      .neo-border { border: 2px solid black; }
+      .neo-shadow { box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); }
+      .neo-shadow-lg { box-shadow: 8px 8px 0px 0px rgba(0,0,0,1); }
+      .neo-hover:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px 0px rgba(0,0,0,1); }
+      .neo-hover-lg:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); }
+      .prose h1, .prose h2, .prose h3 { font-weight: 900 !important; color: black !important; }
+      .prose blockquote { border-left-width: 4px !important; border-left-color: black !important; font-style: normal !important; font-weight: 700 !important; }
+      .prose code { background-color: #fef08a !important; padding: 2px 4px !important; border: 1px solid black !important; border-radius: 4px !important; }
+      .prose pre { border: 2px solid black !important; box-shadow: 4px 4px 0px 0px rgba(0,0,0,1) !important; background-color: #1a1a1a !important; }
+      .nav-current { font-weight: 800; text-decoration: underline; }
+      .product-card-featured { aspect-ratio: 9 / 16; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; background-size: cover; background-position: center; background-color: #ddd; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; }
+      @media (min-width: 768px) { .grid .product-card-featured { max-width: none; margin-left: 0; margin-right: 0; } }
+      .product-card-featured h2, .product-card-featured p { text-shadow: 0 1px 2px rgba(255,255,255,0.9); }
+      .product-card-featured .overlay { background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%); margin: -1.5rem -1.5rem -1.5rem -1.5rem; padding: 1.5rem; margin-top: auto; }
+      .product-card-featured .overlay h2 { color: #fff !important; -webkit-text-stroke: 1.5px black; paint-order: stroke fill; }
+      .product-card-featured .overlay p { color: rgba(255,255,255,0.95); -webkit-text-stroke: 1px black; paint-order: stroke fill; }
+    </style>
+  </head>
+  <body class="min-h-screen text-black antialiased flex flex-col">
+    <nav class="sticky top-0 z-50 bg-[#f0f0f0] neo-border-b border-b-black">
+      <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-bold font-black">筱鑫<span class="underline decoration-4">青也</span></a>
+        <ul class="flex gap-6 font-semibold">
+          <li><a href="index.html" class="hover:underline">首页</a></li>
+          <li><a href="about.html" class="hover:underline">关于我</a></li>
+          <li><a href="friends.html" class="hover:underline">交友</a></li>
+          <li><a href="products.html" class="nav-current hover:underline">产品</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 py-16 flex-1">
+      <h1 class="text-3xl font-black mb-8">产 <span class="underline decoration-4">品</span></h1>
+      <div class="grid gap-6 md:grid-cols-2">
+        <a href="https://v.douyin.com/-3pg8AvS5Qs/" target="_blank" rel="noopener" class="block neo-border neo-shadow neo-hover transition-all product-card-featured" style="background-image: url('mate80-cover.jpg');">
+          <div class="overlay">
+            <h2 class="text-2xl font-black mb-1">Mate80手机壳</h2>
+            <p class="font-medium">怪咖学徒同款手机壳</p>
+          </div>
+        </a>
+        <a href="https://www.douyin.com/user/MS4wLjABAAAAAwNeZ8lRQVAUmqhokKDYgKMlH9pd61QVSbS9AYkbUpo?from_tab_name=main" target="_blank" rel="noopener" class="block neo-border neo-shadow neo-hover transition-all product-card-featured" style="background-image: url('su7-cover.jpg');">
+          <div class="overlay">
+            <h2 class="text-2xl font-black mb-1">浩南的su7</h2>
+            <p class="font-medium">点击跳转浩南小侠抖音主页</p>
+          </div>
+        </a>
+        <a href="#" class="block bg-white neo-border neo-shadow neo-hover p-6 transition-all md:col-span-2">
+          <h2 class="text-xl font-black mb-2">产品名称三</h2>
+          <p class="text-gray-700 font-medium">更多产品可以继续往下添加卡片。</p>
+        </a>
+      </div>
+    </main>
+
+    <footer class="border-t-2 border-black bg-white py-6">
+      <p class="text-center font-semibold text-sm">© 1996-2025 筱鑫青也</p>
+    </footer>
+  </body>
+</html>
